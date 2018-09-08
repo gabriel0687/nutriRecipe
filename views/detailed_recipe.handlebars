@@ -1,0 +1,54 @@
+<link rel='stylesheet' type='text/css' href='http://dev2.nutritionix.com/html/label-jquery-plugin/nutritionLabel-min.css'>
+
+<div class="container">
+  <div class="row">
+    <div class="col-10 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">{{recipe.recipeName}}</h5>
+          <div class="row">
+            <div class="col-7">
+              <p class="card-text">
+                {{recipe.recipeDescription}}</p>
+
+              <div class="row">
+                <p>
+                  <strong>List of Indredients: </strong>
+                </p>
+              </div>
+
+              <!-- Table ingredients -->
+              <table class="table">
+                <tbody>
+                  {{#each recipe.ingredients}}
+                  <tr>
+                    <td class="w-20 ingredient_desc">
+                      {{this.quantity}} {{this.measure.measure_name}} {{this.ingredient.ingredient_name}}
+                    </td>
+                    <td class="w-30">
+                      <img src={{this.ingredient.ingredient_img}} alt="" style="width: 60px; height: 60px ">
+                    </td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            </div>
+            <div class="col-5">
+              <div id="nutrition"></div>
+            </div>
+          </div>
+
+          <a href="/" class="btn btn-danger">← Back To Home</a>
+          <a href="#" class="btn btn-primary" id="detail">Nutrition Facts</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://dev2.nutritionix.com/html/label-jquery-plugin/nutritionLabel-min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>
+<script src="/js/recipe_detail.js"></script>

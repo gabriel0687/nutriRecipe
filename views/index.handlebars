@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+
+<div id="home">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success mb-3">
+    <div class="container">
+      <h2 class="text-white">NutriRecipe</h2>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/recipe">New Recipe
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <!-- Heading Row -->
+    <div class="row my-4">
+      <div class="col-lg-4">
+        <img class="img-fluid rounded" src="https://st2.depositphotos.com/4196725/6214/i/950/depositphotos_62149719-stock-photo-senior-cool-man-cheff-all.jpg" alt="">
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-8">
+        <h3>Nutri System </h3>
+        <p>Assist the chef's with inputting a recipe and giving them the nutritional information about the dish. As well assist
+          in calculating the cost of the dish over all </p>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+
+    <hr>
+
+    <!-- LIST OF RECIPES -->
+    <h4 class="mb-3">Recipe list</h4>
+    <div class="table-responsive">
+      <table class="table table-hover" id="table_ingredients">
+        <thead>
+          <tr>
+            <th>Recipe Name</th>
+            <th>Recipe Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each recipes}}
+          <tr>
+            <td>
+              <a href="recipe/{{this.recipeId}}">{{this.recipeName}}</a>
+            </td>
+            <td>
+              <a href="recipe/{{this.recipeId}}">{{this.recipeDescription}}</a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+<script src="/js/index.js"></script>
